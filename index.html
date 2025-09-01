@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشار العطور الذكي - اكتشف عطرك المثالي</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind Config (لأغراض التطوير السريع، سنتطرق للطريقة الاحترافية لاحقاً) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                        'amiri': ['Amiri', 'serif']
+                    },
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#F8F9FA',
+                        gold: '#D4AF37',
+                        rose: '#FF6B9D',
+                        luxury: '#1a0b3d'
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'particles': 'particles 20s linear infinite',
+                        'fadeInScale': 'fadeInScale 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Hero Header -->
+    <header class="hero-bg text-white py-16 relative">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="perfume-icon mb-6">
+                <i class="fas fa-spray-can"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 font-amiri">مستشار العطور الذكي</h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                اكتشف عطرك المثالي من بين أشهر العطور العالمية بتقنية ذكية تحلل شخصيتك وتفضيلاتك
+            </p>
+            <div class="flex justify-center items-center space-x-reverse space-x-8 mb-8">
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <p class="text-sm opacity-80">تحليل دقيق</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🌟</div>
+                    <p class="text-sm opacity-80">عطور عالمية</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl mb-2">💎</div>
+                    <p class="text-sm opacity-80">اختيار احترافي</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating perfume bottles animation -->
+        <div class="absolute top-20 left-10 text-4xl opacity-20 animate-float">💐</div>
+        <div class="absolute top-32 right-16 text-3xl opacity-15 animate-float" style="animation-delay: 1s;">🌸</div>
+        <div class="absolute bottom-20 left-20 text-3xl opacity-25 animate-float" style="animation-delay: 2s;">✨</div>
+        <div class="absolute bottom-32 right-12 text-4xl opacity-20 animate-float" style="animation-delay: 0.5s;">🧴</div>
+    </header>
+
+    <!-- Luxury Perfumes Carousel -->
+    <section class="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-8 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2 font-amiri">
+                    <i class="fas fa-crown text-gold ml-2"></i>
+                    أفخر العطور العالمية
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">مجموعة مختارة من أرقى دور العطور الفاخرة</p>
+            </div>
+            
+            <div class="relative">
+                <div id="perfumeCarousel" class="flex transition-transform duration-1000 ease-in-out">
+                    <!-- Carousel items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <div class="bg-gray-200 dark:bg-gray-700 h-2">
+        <div id="progressBar" class="progress-bar h-2" style="width: 0%"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="text-center py-12">
+            <div class="luxury-card rounded-3xl shadow-2xl p-8 mb-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-gold/5"></div>
+                <div class="relative z-10">
+                    <div class="perfume-icon mb-6">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 font-amiri">مرحباً بك في عالم العطور الفاخرة</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+                        استكشف مجموعة مختارة من أرقى العطور العالمية واكتشف العطر الذي يعكس شخصيتك الفريدة من خلال تحليل شامل ومدروس
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <!-- Features Cards -->
+                    </div>
+                    
+                    <button id="startButton" class="choice-btn bg-gradient-to-r from-primary via-rose to-gold text-white px-16 py-5 rounded-full text-xl font-bold hover:shadow-2xl transform hover:scale-105 animate-pulse-slow">
+                        <i class="fas fa-magic ml-2"></i>
+                        ابدأ رحلة الاكتشاف
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" class="hidden">
+            <div id="questionCard" class="question-card bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 mb-6">
+                <div class="text-center mb-8">
+                    <span id="questionNumber" class="text-primary font-bold text-lg"></span>
+                    <h3 id="questionText" class="text-2xl font-bold text-gray-800 dark:text-white mt-2"></h3>
+                    <p id="questionSubtext" class="text-gray-600 dark:text-gray-300 mt-2"></p>
+                </div>
+                
+                <div id="choicesContainer" class="grid gap-4">
+                    <!-- Choices will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="hidden">
+            <div class="result-card text-white rounded-3xl shadow-2xl p-8 mb-6">
+                <!-- Result content -->
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">تفاصيل العطر</h3>
+                <div id="perfumeDetails" class="grid md:grid-cols-2 gap-6">
+                    <!-- Details will be inserted here -->
+                </div>
+                
+                <div class="text-center mt-8">
+                    <button id="restartButton" class="choice-btn bg-gradient-to-r from-primary to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-primary">
+                        جرب مرة أخرى 🔄
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 dark:text-gray-400">مستشار العطور - اكتشف عطرك المثالي 🌸</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
